@@ -155,8 +155,216 @@ const App = () => {
           </div>
         </section>
 
+        <section id="about" className="bg-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8">
+              {/* Content */}
+              <div className="flex flex-col justify-center">
+                <p className="text-red-500 text-3xl font-semibold uppercase tracking-wide mb-2">
+                  Who We Are ?
+                </p>
+                <br></br>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  Your Trusted Partner in Business Banking
+                </h3>
+                <p className="italic text-lg font-semibold text-gray-700 mb-6">
+                  We are dedicated to helping businesses thrive by offering
+                  innovative, secure, and efficient banking solutions designed
+                  to simplify financial management.
+                </p>
+                <ul className="space-y-4 mb-6 font-semibold text-xl">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✔️</span>
+                    <span className="text-gray-700">
+                      Your Trusted Financial Partner.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✔️</span>
+                    <span className="text-gray-700">
+                      Champions of Small and Medium Enterprises.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✔️</span>
+                    <span className="text-gray-700">
+                      Data-Driven Financial Insights.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✔️</span>
+                    <span className="text-gray-700">
+                      Scalable Solutions for Growth
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✔️</span>
+                    <span className="text-gray-700">
+                      Top-Tier Security and Fraud Protection.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="services section bg-gray-50 py-20">
+          {/* Section Title */}
+          <div className="container mx-auto text-center  mb-10">
+            <h2 className="text-5xl font-semibold text-gray-900  ">
+              Solutions
+            </h2>
+          </div>
+
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Your Trusted Financial Partner",
+                  description:
+                    "We are dedicated to helping businesses thrive by offering innovative banking solutions tailored to meet your needs. With a focus on providing reliable and efficient services.",
+                },
+                {
+                  title: "Champions of Small Enterprises",
+                  description:
+                    "Our platform is built to provide customized solutions that help you grow at every stage of your journey, from startup to expansion.",
+                },
+                {
+                  title: "Committed to Your Success",
+                  description:
+                    "Our mission is simple: to make business banking as seamless as possible. We work closely with you to simplify your financial operations",
+                },
+                {
+                  title: "Enhanced Financial Technology",
+                  description:
+                    "We are at the forefront of financial technology, constantly evolving to provide the best tools for business owners.",
+                },
+                {
+                  title: "Supportive Business Community",
+                  description:
+                    "Beyond just banking, we offer a community of like-minded entrepreneurs and experts. Our platform connects you to resources, advice, and support.",
+                },
+                {
+                  title: "Driven by Excellence",
+                  description:
+                    "At our core, we are committed to delivering exceptional service with transparency and integrity. We believe in building long-term relationships with our clients",
+                },
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center hover:bg-red-500 transition-all duration-700 ease-in-out transform hover:scale-105 hover:shadow-2xl group"
+                >
+                  <h3 className="mb-4 text-3xl transition-all duration-700 ease-in-out group-hover:text-white group-hover:scale-110 flex items-center justify-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 ">{service.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/*Pricing Section */}
+
+        <section id="pricing" className="pricing section py-20">
+          <div className="container mx-auto text-center  mb-14">
+            <h2 className="text-5xl  font-semibold text-gray-900  ">Pricing</h2>
+          </div>
+
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Free Plan",
+                price: "$0 / month",
+                color: "text-green-500",
+                features: [
+                  "Top-Tier Security ",
+                  "Fraud Protection",
+                  "Faster Payment Processing",
+                  "Scalable Solutions (not available)",
+                  "Financial Insights (not available)",
+                ],
+                featured: true,
+              },
+              {
+                title: "Starter Plan",
+                price: "$19 / month",
+                color: "text-blue-400",
+                features: [
+                  "Top-Tier Security ",
+                  "Fraud Protection",
+                  "Faster Payment Processing",
+                  "Scalable Solutions for Growth",
+                  "Financial Insights (not available)",
+                ],
+                featured: true,
+              },
+              {
+                title: "Business Plan",
+                price: "$29 / month",
+                color: "text-orange-400",
+                features: [
+                  "Top-Tier Security ",
+                  "Fraud Protection",
+                  "Faster Payment Processing",
+                  "Scalable Solutions for Growth",
+                  "Data-Driven Financial Insights",
+                ],
+                featured: true,
+              },
+              {
+                title: "Ultimate Plan",
+                price: "$49 / month",
+                color: "text-blue-600",
+                features: [
+                  "Top-Tier Security ",
+                  "Fraud Protection",
+                  "Faster Payment Processing",
+                  "Scalable Solutions for Growth",
+                  "Data-Driven Financial Insights",
+                ],
+                featured: true,
+              },
+            ].map((plan, index) => (
+              <div
+                key={index}
+                className={`bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-2xl transition-all duration-500 ease-in-out ${
+                  plan.featured ? "border-4 border-blue-100" : ""
+                }`}
+                style={{ transform: "scale(1.05)" }}
+              >
+                <h3 className={`text-2xl font-bold ${plan.color}`}>
+                  {plan.title}
+                </h3>
+                <p className="text-xl font-semibold my-4">{plan.price}</p>
+                <ul className="space-y-2 text-gray-600 mb-6">
+                  {plan.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className={`${
+                        feature.includes("not available")
+                          ? "line-through text-gray-400"
+                          : ""
+                      }`}
+                    >
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#"
+                  className="px-6 py-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition duration-300"
+                >
+                  Buy Now
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Testimonials Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 ">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-semibold text-gray-900 text-center mb-8">
               What Our Clients Say
@@ -198,7 +406,7 @@ const App = () => {
         {/* Contact Us Section */}
         <section id="contact-us" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-semibold mb-8 text-center text-gray-900">
+            <h2 className="text-4xl font-semibold mb-12 text-center text-gray-900">
               Need Help? Contact Us
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2">
@@ -294,7 +502,7 @@ const App = () => {
                     <input
                       type="text"
                       id="name"
-                      placeholder="Eg: Praveen Uppar"
+                      placeholder="Eg: BizBank"
                       className="block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none"
                     />
                   </div>
@@ -308,7 +516,7 @@ const App = () => {
                     <input
                       type="email"
                       id="email"
-                      placeholder="Eg: paviiuppar@gmail.com"
+                      placeholder="Eg: bizbank@gmail.com"
                       className="block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none"
                     />
                   </div>
