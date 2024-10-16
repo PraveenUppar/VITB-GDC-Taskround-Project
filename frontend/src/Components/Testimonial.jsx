@@ -37,7 +37,7 @@ const Testimonial = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 1000); // Change every 3 seconds
+    }, 1500); // Change every 3 seconds
 
     return () => {
       clearInterval(interval); // Clear the interval on component unmount
