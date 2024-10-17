@@ -31,16 +31,15 @@ const testimonials = [
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically change the testimonial every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 1500); // Change every 3 seconds
+    }, 1500);
 
     return () => {
-      clearInterval(interval); // Clear the interval on component unmount
+      clearInterval(interval);
     };
   }, []);
 
@@ -53,7 +52,7 @@ const Testimonial = () => {
           </h2>
           <div className="relative">
             <div
-              className="bg-white rounded-lg shadow-lg p-10  text-center"
+              className="bg-white rounded-lg shadow-lg p-10 text-center transition-opacity duration-500"
               key={currentIndex}
             >
               <p className="text-gray-700 italic mb-4">
@@ -64,7 +63,7 @@ const Testimonial = () => {
               </h4>
             </div>
 
-            {/* Controls - Optional */}
+            {/* Controls */}
             <div className="absolute top-1/2 transform -translate-y-1/2 p-5 flex justify-between w-full">
               <button
                 onClick={() =>

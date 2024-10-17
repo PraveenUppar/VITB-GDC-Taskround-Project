@@ -1,12 +1,44 @@
+import { useEffect, useRef } from "react";
+
 const Price = () => {
+  const pricingRef = useRef(null);
+
+  useEffect(() => {
+    const pricingCards = pricingRef.current.querySelectorAll(".pricing-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fadeInUp");
+          } else {
+            entry.target.classList.remove("animate-fadeInUp");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    pricingCards.forEach((card) => {
+      observer.observe(card);
+    });
+
+    return () => {
+      pricingCards.forEach((card) => observer.unobserve(card));
+    };
+  }, []);
+
   return (
     <div>
       <section id="pricing" className="pricing section py-20">
-        <div className="container mx-auto text-center  mb-14">
-          <h2 className="text-5xl  font-semibold text-gray-900  ">Pricing</h2>
+        <div className="container mx-auto text-center mb-14">
+          <h2 className="text-5xl font-semibold text-gray-900">Pricing</h2>
         </div>
 
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div
+          ref={pricingRef}
+          className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6"
+        >
           {[
             {
               title: "Free Plan",
@@ -63,10 +95,9 @@ const Price = () => {
           ].map((plan, index) => (
             <div
               key={index}
-              className={`bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-2xl transition-all duration-500 ease-in-out ${
+              className={`pricing-card bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:scale-110 ${
                 plan.featured ? "border-4 border-blue-100" : ""
               }`}
-              style={{ transform: "scale(1.05)" }}
             >
               <h3 className={`text-2xl font-bold ${plan.color}`}>
                 {plan.title}
