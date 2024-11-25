@@ -1,5 +1,6 @@
 ## GDC VIT BHOPAL Task Round Project
 
+Live: https://vitb-gdc-taskround-project.vercel.app/
 
 ## Tech Stack Used
 
